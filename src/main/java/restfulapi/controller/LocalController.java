@@ -1,5 +1,6 @@
 package restfulapi.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import restfulapi.controller.advice.exception.LocalNotFound;
@@ -26,7 +27,7 @@ public class LocalController {
     }
 
     @PostMapping
-    public Local save(@RequestBody Local local) {
+    public Local save(@Valid @RequestBody Local local) {
         return localService.save(local);
     }
 
